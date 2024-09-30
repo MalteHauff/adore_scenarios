@@ -1,0 +1,5 @@
+<launch>
+  
+  <node pkg="map_server" type="map_server" name="map_server" args="/home/maltee/Desktop/a_star/adore/adore_scenarios/test_map.yaml"> </node>
+  
+</launch>

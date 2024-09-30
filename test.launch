@@ -1,0 +1,4 @@
+<launch>
+    <arg name="topic_name" default="/map" />
+    <node pkg="rostopic" type="rostopic" name="rostopic_echo_node" output="screen" args="echo $(arg topic_name)" />
+</launch>
