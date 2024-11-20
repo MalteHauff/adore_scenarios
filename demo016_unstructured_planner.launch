@@ -13,8 +13,9 @@
  ********************************************************************************-->
 <launch>
     <param name="simulationID" value="0" type="int" />  
-    <node name="unstructured" pkg="adore_if_ros" type="test_graphSearch" output="screen"/>
-    <node pkg="rostopic" type="rostopic" name="poseresetStart" args="pub StartPose geometry_msgs/Pose '{position: {x: 205, y: 210, z: 0},orientation: { z: 0.1, w: -1.0}}'"/>
-    <node pkg="rostopic" type="rostopic" name="poseresetEnd" args="pub EndPose geometry_msgs/Pose '{position: {x: 205, y: 211, z: 0},orientation: { z: 0.0, w: -1.0}}'"/>
-    <node pkg="map_server" type="map_server" name="map_server" args="/home/maltee/Desktop/a_star/adore/adore_scenarios/maps/test_map.yaml"> </node>
+    <node name="unstructured" pkg="adore_if_ros" type="test_graphSearch" output="screen"  launch-prefix="gdbserver localhost:3000"/>
+    <node pkg="rostopic" type="rostopic" name="poseresetStart" args="pub StartPose geometry_msgs/Pose '{position: {x: 120, y: 400, z: 0},orientation: { z: 0.1, w: -1.0}}'"/>
+    <node pkg="rostopic" type="rostopic" name="poseresetEnd" args="pub EndPose geometry_msgs/Pose '{position: {x: 120, y: 350, z: 0},orientation: { z: 0.0, w: -1.0}}'"/>
+    <!--<node pkg="map_server" type="map_server" name="map_server" args="/home/malte/Desktop/adore/adore_scenarios/maps/test_map.yaml"> </node>-->
+    <node pkg="map_server" type="map_server" name="map_server" args="/home/malte/Desktop/adore/adore_scenarios/map.yaml"> </node>
 </launch>
